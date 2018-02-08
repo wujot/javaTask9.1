@@ -23,9 +23,11 @@ public class PersonTest {
             System.out.println(person.toString());
 
         }catch (NameUndefinedExepction e) {
-            System.out.println("First name and last name can not be null or less then two letters.");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }catch (IncorrectAgeException e) {
-            System.out.println("Age can not be less then one year.");
+            System.out.println(e.getMessage());
+            e.printStackTrace();
         }
     }
 }
