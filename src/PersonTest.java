@@ -4,21 +4,28 @@ public class PersonTest {
 
     public static void main(String[] args) {
 
-        Person person = new Person();
+            Person person = new Person();
 
         Scanner sc = new Scanner(System.in);
 
-        System.out.println("Type first name: ");
-        person.setFirstName(sc.nextLine());
-        System.out.println("Type last name: ");
-        person.setLastName(sc.nextLine());
-        System.out.println("Type age: ");
-        person.setAge(Integer.parseInt(sc.nextLine()));
-        System.out.println("Type pesel: ");
-        person.setPesel(Integer.parseInt(sc.nextLine()));
+        try {
+            System.out.println("Type first name: ");
+            person.setFirstName(sc.nextLine());
+            System.out.println("Type last name: ");
+            person.setLastName(sc.nextLine());
+            System.out.println("Type age: ");
+            person.setAge(Integer.parseInt(sc.nextLine()));
+            System.out.println("Type pesel: ");
+            person.setPesel(Integer.parseInt(sc.nextLine()));
 
-        sc.close();
+            sc.close();
 
-        System.out.println(person.toString());
+            System.out.println(person.toString());
+
+        }catch (NameUndefinedExepction e) {
+            System.out.println("First name and last name can not be null or less then two letters.");
+        }catch (IncorrectAgeException e) {
+            System.out.println("Age can not be less then one year.");
+        }
     }
 }
